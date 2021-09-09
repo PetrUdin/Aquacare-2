@@ -1,0 +1,6 @@
+// {
+//   "presets": ["env"]
+// }
+{
+  "presets": [['@babel/preset-env', { targets: "ie 11" }]]
+}
