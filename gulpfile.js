@@ -38,8 +38,8 @@ let webConfig = {
           }
         ]
       },
-      mode: isDev ? 'development' : 'production',
-    devtool: isDev ? 'eval-source-map' : 'none'
+      // mode: isDev ? 'development' : 'production',
+      // devtool: isDev ? 'eval-source-map':""
 };
 
 function styles() {
