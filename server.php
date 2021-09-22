@@ -8,7 +8,7 @@ $email = trim($_POST['email']);
 $name = htmlspecialchars($_POST['name']);
 $email = htmlspecialchars($_POST['email']);
 $message = htmlspecialchars($_POST['message']);
-$tel = htmlspecialchars($_POST["tel"]);
+$tel = htmlspecialchars($_POST["phone"]);
 $error = '';
 
 if(!$name)
@@ -48,12 +48,12 @@ if(!$error)
 
 $name_tema = "=?utf-8?b?". base64_encode($name) ."?=";
 
-$subject ="Новая заявка с сайта domain.name";
+$subject ="Новая заявка с сайта aquacare";
 $subject1 = "=?utf-8?b?". base64_encode($subject) ."?=";
 /*
 $message ="\n\nСообщение: ".$message."\n\nИмя: " .$name."\n\nТелефон: ".$tel."\n\n";
 */
-$message1 ="\n\nИмя: ".$name."\n\nТелефон: " .$tel."\n\nE-mail: " .$email."\n\nСообщение: ".$message."\n\n";	
+$message1 ="\n\nИмя: ".$name."\n\nТелефон: " .$phone."\n\nE-mail: " .$email."\n\nСообщение: ".$message."\n\n";	
 
 
 $header = "Content-Type: text/plain; charset=utf-8\n";

@@ -366,51 +366,51 @@ document.addEventListener("click", function (event) {
   }
 });
 
-const form = document.querySelector(".form"),
-  inputs = document.querySelectorAll("input");
+// const form = document.querySelector(".form"),
+//   inputs = document.querySelectorAll("input");
 
-const message = {
-  loading: "Загрузка...",
-  success: "Спасибо! Скоро мы с Вами свяжемся",
-  failure: "Что-то пошло не так...",
-};
+// const message = {
+//   loading: "Загрузка...",
+//   success: "Спасибо! Скоро мы с Вами свяжемся",
+//   failure: "Что-то пошло не так...",
+// };
 
-const clearInputs = () => {
-  inputs.forEach((item) => {
-    item.value = "";
-  });
-};
-const postData = async (url, data) => {
-  document.querySelector(".status").textContent = message.loading;
-  let res = await fetch(url, {
-    method: "POST",
-    body: data,
-  });
+// const clearInputs = () => {
+//   inputs.forEach((item) => {
+//     item.value = "";
+//   });
+// };
+// const postData = async (url, data) => {
+//   document.querySelector(".status").textContent = message.loading;
+//   let res = await fetch(url, {
+//     method: "POST",
+//     body: data,
+//   });
 
-  return await res.text();
-};
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+//   return await res.text();
+// };
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault();
 
-  let statusMessage = document.createElement("div");
-  statusMessage.classList.add("status");
-  form.appendChild(statusMessage);
+//   let statusMessage = document.createElement("div");
+//   statusMessage.classList.add("status");
+//   form.appendChild(statusMessage);
 
-  const formData = new FormData(form);
+//   const formData = new FormData(form);
 
-  postData("server.php", formData)
-    .then((res) => {
-      console.log(res);
-      statusMessage.textContent = message.success;
-    })
-    .catch(() => (statusMessage.textContent = message.failure))
-    .finally(() => {
-      clearInputs();
-      setTimeout(() => {
-        statusMessage.remove();
-      }, 5000);
-    });
-});
+//   postData("server.php", formData)
+//     .then((res) => {
+//       console.log(res);
+//       statusMessage.textContent = message.success;
+//     })
+//     .catch(() => (statusMessage.textContent = message.failure))
+//     .finally(() => {
+//       clearInputs();
+//       setTimeout(() => {
+//         statusMessage.remove();
+//       }, 5000);
+//     });
+// });
 
 // const tabs = (headerSelector, tabSelector, contentSelector, activeClass, display = 'block') => {
 //     const header = document.querySelector(headerSelector),
